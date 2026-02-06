@@ -18,8 +18,7 @@
 BAKKESMOD_PLUGIN(RankViewer, "Rank Viewer", "2.1.2", 0)
 
 // Called when the plugin is loaded.
-void RankViewer::onLoad()
-{
+void RankViewer::onLoad() {
     // I didn't write this part, no idea how it works. It's for grabbing the mmr from the game.
     gameWrapper->SetTimeout([this](GameWrapper* gameWrapper) {
         cvarManager->executeCommand("togglemenu " + GetMenuName());
@@ -50,8 +49,7 @@ void RankViewer::onLoad()
 }
 
 // Called when unloading the plugin.
-void RankViewer::onUnload()
-{
+void RankViewer::onUnload() {
     gameWrapper->UnhookEvent("Function TAGame.GameEvent_Soccar_TA.OnMatchWinnerSet");
     gameWrapper->UnhookEvent("Function TAGame.GameEvent_Soccar_TA.Destroyed");
     gameWrapper->UnhookEvent("Function TAGame.GFxData_MenuStack_TA.ButtonTriggered");
@@ -59,8 +57,7 @@ void RankViewer::onUnload()
 }
 
 // Decides if it should render or not.
-void RankViewer::Render()
-{
+void RankViewer::Render() {
     // Only displays if the user has the plugin enabled.
     m_pluginEnabled = cvarManager->getCvar("rankviewer_enabled").getBoolValue();
 
@@ -84,8 +81,7 @@ void RankViewer::Render()
 }
 
 // The actual rendering of ImGui.
-void RankViewer::RenderImGui()
-{
+void RankViewer::RenderImGui() {
     if ((m_screenSize.X <= 0) || (m_screenSize.Y <= 0)) {
         return; // Just in case this function is called before screen size is grabbed, divide by zero = crash.
     }
@@ -266,20 +262,17 @@ void RankViewer::RenderImGui()
 }
 
 // Name of the menu that is used to toggle the window.
-std::string RankViewer::GetMenuName()
-{
+std::string RankViewer::GetMenuName() {
     return m_menuName;
 }
 
 // Title to give the menu.
-std::string RankViewer::GetMenuTitle()
-{
+std::string RankViewer::GetMenuTitle() {
     return m_menuTitle;
 }
 
 // Don't call this yourself, BM will call this function with a pointer to the current ImGui context.
-void RankViewer::SetImGuiContext(uintptr_t ctx)
-{
+void RankViewer::SetImGuiContext(uintptr_t ctx) {
     ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(ctx));
 
     auto gui = gameWrapper->GetGUIManager();
@@ -288,32 +281,27 @@ void RankViewer::SetImGuiContext(uintptr_t ctx)
 }
 
 // Should events such as mouse clicks/key inputs be blocked so they won't reach the game.
-bool RankViewer::ShouldBlockInput()
-{
+bool RankViewer::ShouldBlockInput() {
     return (ImGui::GetIO().WantCaptureMouse || ImGui::GetIO().WantCaptureKeyboard);
 }
 
 // Return true if window should be interactive.
-bool RankViewer::IsActiveOverlay()
-{
+bool RankViewer::IsActiveOverlay() {
     return false;
 }
 
 // Called when the window is opened.
-void RankViewer::OnOpen()
-{
+void RankViewer::OnOpen() {
     m_windowOpen = true;
 }
 
 // Called when the window is closed.
-void RankViewer::OnClose()
-{
+void RankViewer::OnClose() {
     m_windowOpen = false;
 }
 
 // Called when the game ends.
-void RankViewer::OnStatsScreen(std::string eventName)
-{
+void RankViewer::OnStatsScreen(std::string eventName) {
     m_pluginEnabled = cvarManager->getCvar("rankviewer_enabled").getBoolValue();
 
     if (!m_pluginEnabled) {
@@ -339,16 +327,14 @@ void RankViewer::OnStatsScreen(std::string eventName)
 }
 
 // Called when you go back to the main menu or leave game.
-void RankViewer::OnGameLeave(std::string eventName)
-{
+void RankViewer::OnGameLeave(std::string eventName) {
     // Removes canvas if you quit the stats screen.
     m_drawCanvas = false;
     m_friendsListOpen = false;
 }
 
 // Called when you open or close the friend tab.
-void RankViewer::OnFriendScreen(ActorWrapper caller, void* params, const std::string& functionName)
-{
+void RankViewer::OnFriendScreen(ActorWrapper caller, void* params, const std::string& functionName) {
     // Temporarily disabling this feature until I get it working better.
 
     //if (params) 
@@ -506,8 +492,7 @@ int32_t RankViewer::Unranker(int32_t playlistId, int32_t rank, int32_t div, bool
 }
 
 // Gets mmr and rank information for displaying
-void RankViewer::CheckMMR(int32_t retryCount)
-{
+void RankViewer::CheckMMR(int32_t retryCount) {
     m_pluginEnabled = cvarManager->getCvar("rankviewer_enabled").getBoolValue();
 
     if (!m_pluginEnabled) {
