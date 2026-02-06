@@ -352,6 +352,10 @@ void RankViewer::OnFriendScreen(ActorWrapper caller, void* params, const std::st
     //}
 }
 
+bool RankViewer::IsValidPlaylist(int32_t playlistId) {
+    return (std::find(m_supportedPlaylists.begin(), m_supportedPlaylists.end(), playlistId) != m_supportedPlaylists.end());
+}
+
 bool RankViewer::IsValidRank(int32_t rank) {
     return ((rank >= RANK_UNRANKED) && (rank <= RANK_SUPERSONICLEGEND));
 }
@@ -511,7 +515,8 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                 if (gameWrapper->GetMMRWrapper().IsSynced(m_uniqueID, m_currentPlaylist) && !gameWrapper->GetMMRWrapper().IsSyncing(m_uniqueID)) {
 
                     // Makes sure it is one of the supported playlists to prevent crashes.
-                    if (std::find(m_supportedPlaylists.begin(), m_supportedPlaylists.end(), m_currentPlaylist) == m_supportedPlaylists.end()) {
+
+                    if (!IsValidPlaylist(m_currentPlaylist)) {
                         return;
                     }
 

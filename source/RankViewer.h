@@ -144,6 +144,7 @@ private:
 	void OnFriendScreen(ActorWrapper caller, void* params, const std::string& functionName);
 
 	// Helper functions and utils.
+	bool IsValidPlaylist(int32_t playlistId);
 	bool IsValidRank(int32_t rank);
 	bool IsValidDiv(int32_t div);
 	std::string GetRankName(int32_t rank);
