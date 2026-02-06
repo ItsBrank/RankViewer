@@ -1,9 +1,8 @@
-// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank, CWO333.
+U// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank, CWO333.
 // New Credits: Martin for the clean-up, thanks so much! I know it was a mess before, I suck at coding :D
 // New New Credits: I don't even know anymore so many people have helped, love this community everyone is so helpful <3
 
 // To Do:
-// - Convert rank pngs to tga for linux support (this one is easy at least).
 // - Fix aspect ratio being off for screens larger than 1920x1080p.
 // - Redo the hide UI when friends list is open feature.
 // - Add support for the quads and heatseeker playlists.
