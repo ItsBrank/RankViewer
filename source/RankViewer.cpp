@@ -361,79 +361,71 @@ bool RankViewer::IsValidDiv(int32_t div) {
 }
 
 std::string RankViewer::GetRankName(int32_t rank) {
-    if (IsValidRank(rank)) {
-        switch (rank) {
-        case RANK_UNRANKED:
-            return "Unranked";
-        case RANK_BRONZE_I:
-            return "Bronze I";
-        case RANK_BRONZE_II:
-            return "Bronze II";
-        case RANK_BRONZE_III:
-            return "Bronze III";
-        case RANK_SILVER_I:
-            return "Silver I";
-        case RANK_SILVER_II:
-            return "Silver II";
-        case RANK_SILVER_III:
-            return "Silver III";
-        case RANK_GOLD_I:
-            return "Gold I";
-        case RANK_GOLD_II:
-            return "Gold II";
-        case RANK_GOLD_III:
-            return "Gold III";
-        case RANK_PLATINUM_I:
-            return "Platinum I";
-        case RANK_PLATINUM_II:
-            return "Platinum II";
-        case RANK_PLATINUM_III:
-            return "Platinum III";
-        case RANK_DIAMOND_I:
-            return "Diamond I";
-        case RANK_DIAMOND_II:
-            return "Diamond II";
-        case RANK_DIAMOND_III:
-            return "Diamond III";
-        case RANK_CHAMPION_I:
-            return "Champion I";
-        case RANK_CHAMPION_II:
-            return "Champion II";
-        case RANK_CHAMPION_III:
-            return "Champion III";
-        case RANK_GRANDCHAMPION_I:
-            return "Grand Champion I";
-        case RANK_GRANDCHAMPION_II:
-            return "Grand Champion II";
-        case RANK_GRANDCHAMPION_III:
-            return "Grand Champion III";
-        case RANK_SUPERSONICLEGEND:
-            return "Super Sonic Legend";
-        default:
-            break;
-        }
+    switch (rank) {
+    case RANK_UNRANKED:
+        return "Unranked";
+    case RANK_BRONZE_I:
+        return "Bronze I";
+    case RANK_BRONZE_II:
+        return "Bronze II";
+    case RANK_BRONZE_III:
+        return "Bronze III";
+    case RANK_SILVER_I:
+        return "Silver I";
+    case RANK_SILVER_II:
+        return "Silver II";
+    case RANK_SILVER_III:
+        return "Silver III";
+    case RANK_GOLD_I:
+        return "Gold I";
+    case RANK_GOLD_II:
+        return "Gold II";
+    case RANK_GOLD_III:
+        return "Gold III";
+    case RANK_PLATINUM_I:
+        return "Platinum I";
+    case RANK_PLATINUM_II:
+        return "Platinum II";
+    case RANK_PLATINUM_III:
+        return "Platinum III";
+    case RANK_DIAMOND_I:
+        return "Diamond I";
+    case RANK_DIAMOND_II:
+        return "Diamond II";
+    case RANK_DIAMOND_III:
+        return "Diamond III";
+    case RANK_CHAMPION_I:
+        return "Champion I";
+    case RANK_CHAMPION_II:
+        return "Champion II";
+    case RANK_CHAMPION_III:
+        return "Champion III";
+    case RANK_GRANDCHAMPION_I:
+        return "Grand Champion I";
+    case RANK_GRANDCHAMPION_II:
+        return "Grand Champion II";
+    case RANK_GRANDCHAMPION_III:
+        return "Grand Champion III";
+    case RANK_SUPERSONICLEGEND:
+        return "Super Sonic Legend";
+    default:
+        return "RANK ERROR";
     }
-
-    return "RANK ERROR";
 }
 
 std::string RankViewer::GetDivName(int32_t div) {
-    if (IsValidDiv(div)) {
-        switch (div) {
-        case DIVISION_ONE:
-            return "I";
-        case DIVISION_TWO:
-            return "II";
-        case DIVISION_THREE:
-            return "II";
-        case DIVISION_FOUR:
-            return "IV";
-        default:
-            break;
-        }
+    switch (div) {
+    case DIVISION_ONE:
+        return "I";
+    case DIVISION_TWO:
+        return "II";
+    case DIVISION_THREE:
+        return "II";
+    case DIVISION_FOUR:
+        return "IV";
+    default:
+        return "DIV ERROR";
     }
-
-    return "DIV ERROR";
 }
 
 // Converts rank and div into the usable string that displays on the screen.
