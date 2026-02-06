@@ -1,4 +1,4 @@
-// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank.
+// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank, CWO333.
 // New Credits: Martin for the clean-up, thanks so much! I know it was a mess before, I suck at coding :D
 // New New Credits: I don't even know anymore so many people have helped, love this community everyone is so helpful <3
 
@@ -39,7 +39,7 @@ void RankViewer::onLoad() {
     m_friendsCloseName = FNameOJ(gameWrapper->GetFNameIndexByString("closeButton"));
 
     // Puts in the unranked icon as a placeholder for the three images in case something goes wrong later on.
-    const std::filesystem::path unrankedPath = (gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.png");
+    const std::filesystem::path unrankedPath = (gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.tga");
     m_previousRankImg = std::make_shared<ImageWrapper>(unrankedPath, false, true);
     m_currentRankImg = std::make_shared<ImageWrapper>(unrankedPath, false, true);
     m_nextRankImg = std::make_shared<ImageWrapper>(unrankedPath, false, true);
@@ -537,7 +537,7 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                     m_currentName = GetRankDivName(m_currentRank, m_currentDiv);
 
                     // Gets and loads the rank icon for your current rank from the RankViewer folder
-                    std::string fileName = (std::to_string(m_currentRank) + ".png");
+                    std::string fileName = (std::to_string(m_currentRank) + ".tga");
                     const std::filesystem::path currentPath = (gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName);
                     m_currentRankImg = std::make_shared<ImageWrapper>(currentPath, false, true);
 
@@ -612,11 +612,11 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                     }
 
                     // Gets correct rank icons from folder for before and after ranks.
-                    fileName = (std::to_string(m_previousRank) + ".png");
+                    fileName = (std::to_string(m_previousRank) + ".tga");
                     const std::filesystem::path previousPath = (gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName);
                     m_previousRankImg = std::make_shared<ImageWrapper>(previousPath, false, true);
 
-                    fileName = (std::to_string(m_nextRank) + ".png");
+                    fileName = (std::to_string(m_nextRank) + ".tga");
                     const std::filesystem::path nextPath = (gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName);
                     m_nextRankImg = std::make_shared<ImageWrapper>(nextPath, false, true);
 
