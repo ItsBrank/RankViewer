@@ -92,7 +92,7 @@ void RankViewer::RenderImGui() {
     const float upperBound = 290.0f;
     const float lowerBound = 835.0f;
 
-    // The ImGui window allows the quads to show on the screen
+    // The ImGui window allows the quads to show on the screen.
     ImVec2 windowPos = ImVec2((1660 * xPercent), 0);
     ImGui::SetNextWindowPos(windowPos, ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2((m_screenSize.X - (1660.0f * xPercent) + (10.0f * xPercent)), (m_screenSize.Y + (10.0f * yPercent))));
@@ -109,7 +109,7 @@ void RankViewer::RenderImGui() {
 
     ImDrawList* drawList = ImGui::GetWindowDrawList();
 
-    // Sidebar
+    // Sidebar.
     ImVec2 centerPoint = ImVec2(1920, 950);
     drawList->AddQuadFilled(ImVec2((xPercent * centerPoint.x), (yPercent * centerPoint.y)),
         ImVec2((xPercent * (centerPoint.x - 45)), (yPercent * centerPoint.y)),
