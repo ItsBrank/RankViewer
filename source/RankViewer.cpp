@@ -1,4 +1,4 @@
-U// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank, CWO333.
+// Credits: Bakkes: MMR rounding, being a cool guy. CinderBlock: overall big help <3. mega: ] his SessionStats plugin was a really helpful reference. Others: savior, Martinn, Simple_AOB, HalfwayDead, ItsBrank, CWO333.
 // New Credits: Martin for the clean-up, thanks so much! I know it was a mess before, I suck at coding :D
 // New New Credits: I don't even know anymore so many people have helped, love this community everyone is so helpful <3
 
