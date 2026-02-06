@@ -5,6 +5,7 @@
 // To Do:
 // - Convert rank pngs to tga for linux support (this one is easy at least).
 // - Fix aspect ratio being off for screens larger than 1920x1080p.
+// - Redo the hide UI when friends list is open feature.
 // - Add support for the quads and heatseeker playlists.
 
 #include "pch.h"
