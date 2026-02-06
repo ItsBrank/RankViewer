@@ -532,7 +532,7 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                     m_currentRank = userRank.Tier;
                     m_currentDiv = userRank.Division;
 
-                    // Converts the tier and div into the division with the roman numeral (I, II, III, IV).
+                    // Converts the rank and div into the division with the roman numeral (I, II, III, IV).
                     m_currentName = GetRankDivName(m_currentRank, m_currentDiv);
 
                     // Gets and loads the rank icon for your current rank from the RankViewer folder
@@ -559,7 +559,7 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                         m_nextDiv = (m_currentDiv + 1);
                         m_previousDiv = DIVISION_ONE;
 
-                        // Finds the mmr for that div and tier.
+                        // Finds the mmr for that div and rank.
                         m_nextLowerMMR = Unranker(m_currentPlaylist, m_nextRank, m_nextDiv, false);
                         m_nextName = GetRankDivName(m_nextRank, m_nextDiv);
 
@@ -573,7 +573,7 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                         m_nextDiv = m_currentDiv;
                         m_previousDiv = DIVISION_FOUR;
 
-                        // Finds the mmr for that div and tier.
+                        // Finds the mmr for that div and rank.
                         m_nextLowerMMR = Unranker(m_currentPlaylist, m_nextRank, m_nextDiv, true);
                         m_nextName = GetRankDivName(m_nextRank, m_nextDiv);
 
@@ -602,7 +602,7 @@ void RankViewer::CheckMMR(int32_t retryCount) {
                             m_previousDiv = (m_currentDiv - 1);
                         }
 
-                        // Finds the mmr for that div and tier.
+                        // Finds the mmr for that div and rank.
                         m_nextLowerMMR = Unranker(m_currentPlaylist, m_nextRank, m_nextDiv, false);
                         m_nextName = GetRankDivName(m_nextRank, m_nextDiv);
 
