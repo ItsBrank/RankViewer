@@ -1,5 +1,5 @@
 # RankViewer
-RankViewer plugin for BakkesMod (https://bakkesplugins.com/plugins/view/91)
+RankViewer plugin for BakkesMod (https://bakkesplugins.com/plugin/91)
 
 ### About
 This plugin allows you to see the MMR that you need for the division above and below your rank! The slider on the side will show you how close you are to ranking up! No longer will you sit there and wonder when you will rank up! All Rocket League players not only want this, but need this plugin in their lives. 
