@@ -441,7 +441,7 @@ std::string RankViewer::GetRankDivName(int32_t rank, int32_t div) {
         return "DIV ERROR";
     }
 
-    return ("DIV" + GetDivName(div));
+    return ("DIV " + GetDivName(div));
     //std::string rankName = GetRankName(rank);
 
     //if ((rank == RANK_UNRANKED) || (rank == RANK_SUPERSONICLEGEND)) {
