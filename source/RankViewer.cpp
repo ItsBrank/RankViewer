@@ -14,7 +14,7 @@
 #include "utils/parser.h"
 #include <nlohmann/json.hpp>
 
-BAKKESMOD_PLUGIN(RankViewer, "Rank Viewer", "2.1.2", 0)
+BAKKESMOD_PLUGIN(RankViewer, "Rank Viewer", "2.2.0", 0)
 
 // Called when the plugin is loaded.
 void RankViewer::onLoad() {
@@ -448,7 +448,7 @@ std::string RankViewer::GetRankDivName(int32_t rank, int32_t div) {
     //    return rankName; // Unranked and super sonic legend don't have divisions.
     //}
 
-    //return (rankName + " Div " + GetDivName(div));
+    //return (rankName + " DIV " + GetDivName(div));
 }
 
 // Converts information into mmr. Format is directly from game (mode is 11-34, rank is 0-22, div is 0-3).
