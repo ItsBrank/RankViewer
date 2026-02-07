@@ -26,7 +26,7 @@ void RankViewer::onLoad() {
     // Setting for if the plugin is enabled.
 	cvarManager->registerCvar("rankviewer_enabled", "1", "Enable or Disable the Rank Viewer Plugin", true, true, 0, true, 1, true);
 
-    // Called when game ends
+    // Called when game ends.
     gameWrapper->HookEvent("Function TAGame.GameEvent_Soccar_TA.OnMatchWinnerSet", std::bind(&RankViewer::OnStatsScreen, this, std::placeholders::_1));
 
     // Called when you leave the stats screen or exit games.
@@ -254,8 +254,7 @@ void RankViewer::RenderImGui() {
 
     ImGui::End();
 
-    if (!m_windowOpen)
-    {
+    if (!m_windowOpen) {
         cvarManager->executeCommand("togglemenu " + GetMenuName());
     }
 }
@@ -273,10 +272,7 @@ std::string RankViewer::GetMenuTitle() {
 // Don't call this yourself, BM will call this function with a pointer to the current ImGui context.
 void RankViewer::SetImGuiContext(uintptr_t ctx) {
     ImGui::SetCurrentContext(reinterpret_cast<ImGuiContext*>(ctx));
-
-    auto gui = gameWrapper->GetGUIManager();
-
-    gui.LoadFont("PantonBig", "Panton-LightCaps.otf", 32);
+    gameWrapper->GetGUIManager().LoadFont("PantonBig", "Panton-LightCaps.otf", 32);
 }
 
 // Should events such as mouse clicks/key inputs be blocked so they won't reach the game.
