@@ -85,7 +85,7 @@ void RankViewer::RenderImGui() {
         return; // Just in case this function is called before screen size is grabbed, divide by zero = crash.
     }
 
-    // Percentages for converting to a non-1080p screen
+    // Percentages for converting to a non-1080p screen.
     const float xPercent = (static_cast<float>(m_screenSize.X) / 1920.0f);
     const float yPercent = (static_cast<float>(m_screenSize.Y) / 1080.0f);
     const float upperBound = 290.0f;
@@ -100,8 +100,7 @@ void RankViewer::RenderImGui() {
     m_fontBig = gui.GetFont("PantonBig");
 
     // Early out if the window is collapsed, as an optimization.
-    if (!ImGui::Begin(m_menuTitle.c_str(), &m_windowOpen, (ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoTitleBar)))
-    {
+    if (!ImGui::Begin(m_menuTitle.c_str(), &m_windowOpen, (ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoTitleBar))) {
         ImGui::End();
         return;
     }
